@@ -68,6 +68,21 @@ export const WindowText = styled.div`
   padding: 1em;
   text-align: center;`;
 
-export const ButtonsWrapper = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: center;`
+  justify-content: center;`;
+
+export const WindowButton = styled.div`
+  text-align: center;
+  width: 150px;
+  padding: 0.5em;
+  border: solid;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-bottom-color: #0E0E0E;
+  border-right-color: #0E0E0E;
+  box-shadow: 2px 2px 5px gray;
+  &:hover {
+    background-color: #C5C5C5;
+    filter: brightness(0.9);
+  }`;

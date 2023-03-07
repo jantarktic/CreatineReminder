@@ -21,14 +21,17 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
+  background-position: center;
+  background-size: cover;
   padding: ${(props) => props.$padding || "140px 0"};
+  padding-top: clamp(70px, 25vh, 220px);
   margin: ${(props) => props.$margin || ""};
   background: ${(props) => (!!props.$inverse ? "white" : "#377E80")};
   position: ${(props) => props.$position || ""};
   width: ${(props) => props.$width || "auto"};
   min-width: ${(props) => props.$minWidth || "auto"};
   max-width: ${(props) => props.$maxWidth || "auto"};
-  height: ${(props) => (props.$height ? props : "auto")};
+  height: 100vh;
   max-height: ${(props) => props.$maxHeight || "auto"};
   min-height: ${(props) => props.$minHeight || "auto"};
   @media screen and (max-width: 768px) {
