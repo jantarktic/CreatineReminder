@@ -6,7 +6,7 @@ export const WindowContainer = styled.div`
 `;
 
 export const WindowDiv = styled.div`
-  display: flex;
+  display: grid;
   background: #C0C0C0;
   overflow: hidden;
   padding: 0 0 0.75em 0;
@@ -21,7 +21,8 @@ export const WindowDiv = styled.div`
   `
 
 export const WindowDetails = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 2;
   background: #02009A;
   padding: 0.75em;
   width: 100%;
@@ -32,7 +33,7 @@ export const WindowDetails = styled.div`
 
 export const WindowName = styled.p`
   font-size: 1em;
-  font-weight: 400;
+  grid-column: 1/2;
   letter-spacing: 2px;
   align-self: center;
   justify-self: start;
@@ -43,12 +44,29 @@ export const WindowName = styled.p`
 `;
 
 export const WindowCross = styled.img`
+  display: flex;
+  width: 2em;
+  height: 2em;
   grid-column: 2/2;
-  width: 3.55em;
-  height: 3.55em;
-  border-radius: 50%;
-  object-fit: cover;
+  background: #C0C0C0;
+  padding: 3px;
+  border: solid;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-bottom-color: #0E0E0E;
+  border-right-color: #0E0E0E;
+  justify-self: end;
   &:hover {
     filter: brightness(0.9);
   }
 `;
+
+export const WindowText = styled.div`
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  padding: 1em;
+  text-align: center;`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: center;`
