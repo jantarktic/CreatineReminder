@@ -1,5 +1,6 @@
 import GlobalStyle, { Container, Section, MainHeading } from './globalStyles';
 import GlobalFonts from './fonts/fonts'
+import Navbar from './components/Navbar/Navbar';
 import Window from "./components/Window/Window";
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
     <Section>
       <GlobalStyle />
       <GlobalFonts />
+      <Navbar />
       <Container>
         <MainHeading>
           This is Your Creatine Reminder
