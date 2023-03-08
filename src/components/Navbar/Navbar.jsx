@@ -25,7 +25,7 @@ const Navbar = () => {
         </NavLogo>
         <NavMenu>
           <NavItem>
-            <a href={data.to} target="_blank" rel="noopener noreferrer">
+            <a style={{ color: "#404040" }} href={data.to} target="_blank" rel="noopener noreferrer">
               <NavLinks>{data.text}</NavLinks>
             </a>
           </NavItem>

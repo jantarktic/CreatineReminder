@@ -8,8 +8,6 @@ const Window = () => {
     return savedIsRunning !== null ? JSON.parse(savedIsRunning) : false;
   });
 
-  const [permission, setPermission] = useState(false)
-
   useEffect(() => {
     localStorage.setItem('isRunning', JSON.stringify(isRunning));
   }, [isRunning]);
