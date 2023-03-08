@@ -47,6 +47,9 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   width: 100%;
+  @media screen and (max-width: 960px) {
+    margin-bottom: 2em;
+  }
   > li:first-child {
     margin-left: auto;
   }
@@ -56,7 +59,6 @@ export const NavItem = styled.li`
   height: 80px;
   cursor: pointer;
   @media screen and (max-width: 960px) {
-    width: 100%;
     &:hover {
       border: none;
     }
@@ -77,24 +79,13 @@ export const NavLinks = styled.span`
   }
   @media screen and (max-width: 960px) {
     text-align: center;
-    padding: 2rem;
     width: 100%;
-    display: table;
     &:hover {
       color: #E0E0E0;
       transition: all 0.3s ease;
     }
   }
-`;
-
-export const NavBtnLink = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 8px 16px;
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
+  @media screen and (max-width: 450px) {
+    font-size: 12px;
+  }
 `;
