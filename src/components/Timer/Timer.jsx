@@ -59,10 +59,8 @@ const Timer = () => {
       const timeDifference = Math.round(currentSeconds - prevSeconds);
       localStorage.setItem("currentTime", currentTime)
       const newTimer = timer - timeDifference
-      console.log(newTimer);
       setTimer(prevTimer => {
         const newTimer = prevTimer - timeDifference;
-        console.log(newTimer);
         if (newTimer <= 0) {
           new Notification("It's time to take your creatine!");
           return 86400;

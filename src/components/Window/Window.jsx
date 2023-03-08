@@ -46,7 +46,7 @@ const Window = () => {
           <WindowCross src="./assets/cross.svg" alt="cross" />
         </WindowDetails>
         {isRunning ? (<>
-          <WindowText>Oh hell yeah, you're going to be jacked and I'm not going to let you forget!</WindowText>
+          <WindowText>Oh hell yeah. You're going to be jacked and I'm not going to let you forget!</WindowText>
           <Timer isRunning={isRunning} />
         </>) : (
           <>
