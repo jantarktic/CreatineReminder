@@ -14,12 +14,6 @@ const Window = () => {
     localStorage.setItem('isRunning', JSON.stringify(isRunning));
   }, [isRunning]);
 
-  // useEffect(() => {
-  //   if (isRunning & Notification.permission === "granted" & !localStorage.getItem("timer")) {
-  //     new Notification("It's time to take your creatine!");
-  //   };
-  // })
-
   const handleClick = () => {
     setIsRunning(true);
 
