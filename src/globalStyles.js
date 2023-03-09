@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
@@ -32,7 +32,7 @@ export const Section = styled.section`
   width: ${(props) => props.$width || "auto"};
   min-width: ${(props) => props.$minWidth || "auto"};
   max-width: ${(props) => props.$maxWidth || "auto"};
-  height: 100vh;
+  height: "100%";
   max-height: ${(props) => props.$maxHeight || "auto"};
   min-height: ${(props) => props.$minHeight || "auto"};
   @media screen and (max-width: 768px) {

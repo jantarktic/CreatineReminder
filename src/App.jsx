@@ -5,7 +5,7 @@ import Window from "./components/Window/Window";
 
 export default function App() {
   return (
-    <Section $smPadding="70px 0 0 0">
+    <Section>
       <GlobalStyle />
       <GlobalFonts />
       <Navbar />
@@ -15,6 +15,6 @@ export default function App() {
         </MainHeading>
         <Window />
       </Container>
-    </Section>
+    </ Section>
   )
 }
