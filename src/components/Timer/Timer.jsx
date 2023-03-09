@@ -9,7 +9,7 @@ const Timer = () => {
 
   const countTimer = useCallback(() => {
     const now = new Date();
-    const distanceInSeconds = Math.round((localStorage.getItem("expiration") - now.getTime()) / 1000); 
+    const distanceInSeconds = Math.round((localStorage.getItem("expiration") - now.getTime()) / 1000);
     setTimer(distanceInSeconds)
     if (timer === 0) {
       localStorage.setItem("expiration", new Date().getTime() + 24 * 60 * 60 * 1000)

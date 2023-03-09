@@ -68,6 +68,15 @@ export const WindowText = styled.div`
   padding: 1em;
   text-align: center;`;
 
+export const GifWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+  }`
+
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;`;
