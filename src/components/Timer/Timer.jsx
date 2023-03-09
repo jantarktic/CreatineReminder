@@ -2,24 +2,21 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { TimerText } from "./TimerStyles.js";
 
 const Timer = () => {
+  const expirationTime = localStorage.getItem("expiration") ?? localStorage.setItem("expiration", new Date().getTime() + 24 * 60 * 60 * 1000); // + 24 * 60 * 60 * 1000
   const initialTimer = localStorage.getItem("timer") ?? 86400; //86400
   const timeoutId = useRef(null);
   const [timer, setTimer] = useState(initialTimer);
-  const [timeChecked, setTimeChecked] = useState(false);
 
   const countTimer = useCallback(() => {
-    if (timer <= 0) {
-      localStorage.clear("timer");
-    } else if (!timeChecked) {
-      storeCurrentTime()
-    } else {
-      setTimer(timer - 1);
-      if (timer === 1) {
-        setTimer(86400)
-        new Notification("It's time to take your creatine!")
-      }
-      localStorage.setItem("timer", timer);
-    };
+    const now = new Date();
+    const distanceInSeconds = Math.round((localStorage.getItem("expiration") - now.getTime()) / 1000); 
+    setTimer(distanceInSeconds)
+    if (timer === 0) {
+      localStorage.setItem("expiration", new Date().getTime() + 24 * 60 * 60 * 1000)
+      setTimer(86400)
+      new Notification("It's time to take your creatine!");
+    }
+    localStorage.setItem("timer", timer);
   }, [timer]);
 
   const formatTime = (seconds) => {
@@ -45,33 +42,6 @@ const Timer = () => {
     // cleanup function
     return () => window.clearTimeout(timeoutId.current);
   }, [timer, countTimer]);
-
-  const storeCurrentTime = () => {
-    if (!localStorage.getItem("currentTime")) {
-      const currentTime = new Date();
-      localStorage.setItem("currentTime", currentTime.toISOString())
-      setTimer(timer => { return timer - 1 })
-      setTimeChecked(true)
-    } else if (localStorage.getItem("currentTime") && !timeChecked) {
-      const currentTime = new Date().toISOString();
-      const currentSeconds = Date.parse(currentTime) / 1000;
-      const prevSeconds = Date.parse(localStorage.getItem("currentTime")) / 1000;
-      const timeDifference = Math.round(currentSeconds - prevSeconds);
-      localStorage.setItem("currentTime", currentTime)
-      const newTimer = timer - timeDifference
-      setTimer(prevTimer => {
-        const newTimer = prevTimer - timeDifference;
-        if (newTimer <= 0) {
-          new Notification("It's time to take your creatine!");
-          return 86400;
-        } else {
-          localStorage.setItem("timer", newTimer);
-          return newTimer;
-        }
-      });
-      setTimeChecked(true);
-    };
-  };
 
   return (
     <TimerText>Next Creatine Dose in {formatTime(timer)}</TimerText>);

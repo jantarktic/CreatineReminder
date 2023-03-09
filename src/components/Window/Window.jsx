@@ -23,7 +23,6 @@ const Window = () => {
     } else if (Notification.permission !== "denied") {
       Notification.requestPermission().then(permission => {
         if (permission === "granted") {
-          setPermission(true)
           new Notification("Creatine taken!");
         }
       });
