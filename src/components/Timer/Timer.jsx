@@ -11,7 +11,7 @@ const Timer = () => {
     const now = new Date();
     const distanceInSeconds = Math.round((localStorage.getItem("expiration") - now.getTime()) / 1000);
     setTimer(distanceInSeconds)
-    if (timer === 0) {
+    if (timer <= 0) {
       localStorage.setItem("expiration", new Date().getTime() + 24 * 60 * 60 * 1000)
       setTimer(86400)
       new Notification("It's time to take your creatine!");
